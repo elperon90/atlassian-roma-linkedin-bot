@@ -1,0 +1,20 @@
+version: 2
+updates:
+  # Mantiene aggiornate (e segnala le CVE su) le dipendenze Python pinnate
+  # in requirements.txt.
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+
+  # Mantiene aggiornate le GitHub Actions usate nei workflow.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
